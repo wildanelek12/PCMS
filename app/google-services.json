@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1003303176883",
+    "firebase_url": "https://pcms-673b4-default-rtdb.firebaseio.com",
+    "project_id": "pcms-673b4",
+    "storage_bucket": "pcms-673b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003303176883:android:f79b0ac01aab74993dbec6",
+        "android_client_info": {
+          "package_name": "com.codes.masmadeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003303176883-a4h2haccoa637v83njrjcqe8sc8fteh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMpC5vgMVweO7A5Vs4y8tYm-aMBvWMxY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003303176883-a4h2haccoa637v83njrjcqe8sc8fteh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003303176883:android:ce2c0009d18c406d3dbec6",
+        "android_client_info": {
+          "package_name": "id.codes.pcms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003303176883-a4h2haccoa637v83njrjcqe8sc8fteh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMpC5vgMVweO7A5Vs4y8tYm-aMBvWMxY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003303176883-a4h2haccoa637v83njrjcqe8sc8fteh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
