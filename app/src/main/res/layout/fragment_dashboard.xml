@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/_20sdp"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
@@ -37,10 +38,10 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="@dimen/_154sdp"
-        android:layout_height="@dimen/_144sdp"
-        android:layout_marginTop="@dimen/_40sdp"
-        android:src="@drawable/ic_amico"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/sm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
@@ -49,7 +50,7 @@
         android:id="@+id/btn_sensor_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_sensor_node_1"
+        android:src="@drawable/ic_node_1"
         app:layout_constraintEnd_toStartOf="@+id/btn_sensor_2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +60,7 @@
         android:id="@+id/btn_sensor_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_sensor_node_2"
+        android:src="@drawable/ic_node_2"
         app:layout_constraintEnd_toStartOf="@+id/btn_sensor_3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_sensor_1"
@@ -69,7 +70,7 @@
         android:id="@+id/btn_sensor_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_sensor_node_3"
+        android:src="@drawable/ic_node_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn_sensor_2"
