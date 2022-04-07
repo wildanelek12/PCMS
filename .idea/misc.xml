@@ -7,13 +7,13 @@
         <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/activity_detail_grafik.xml" value="0.358695652173913" />
         <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/activity_main_menu.xml" value="0.33" />
+        <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/activity_main_menu.xml" value="0.1404494382022472" />
         <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/activity_sensor_node1.xml" value="0.33" />
         <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/activity_splash_screen.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/fragment_dashboard.xml" value="0.16" />
-        <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/fragment_home.xml" value="0.5" />
+        <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/fragment_dashboard.xml" value="0.211864406779661" />
+        <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/layout/fragment_notifications.xml" value="0.22" />
-        <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/wilda/AndroidStudioProjects/PCMS/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5" />
       </map>
     </option>
   </component>

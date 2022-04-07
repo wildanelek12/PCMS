@@ -1,9 +1,459 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".MonitoringActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:fontFamily="@font/bold_product"
+            android:text="Informasi"
+            android:textColor="#27846E"
+            android:textSize="@dimen/_22ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/suhu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:layout_marginStart="50dp"
+            app:cardBackgroundColor="#F2F2F2"
+            app:cardCornerRadius="@dimen/_14sdp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/suhuu"
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:src="@drawable/ic_suhu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:fontFamily="@font/regular_product"
+                    android:text="Suhu Udara"
+                    android:textColor="#2d2d2d"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#F6F6F6"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/suhu"
+            app:layout_constraintStart_toStartOf="@+id/suhu"
+            app:layout_constraintTop_toBottomOf="@+id/suhu">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/regular_product"
+                android:text="Tanaman kentang di Indonesia umumnya ditanam di dataran tinggi (pegunungan) dengan ketinggian lebih dari 1000 mdpl
+Tanaman kentang tumbuh baik pada lingkungan dengan suhu rendah, yaitu 15ºC sampai 22ºC,"
+                android:textColor="@color/hijau_font"
+                android:textSize="@dimen/_10sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/suhu2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#F2F2F2"
+            app:cardCornerRadius="@dimen/_14sdp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/suhuu2"
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+
+                    android:src="@drawable/ic_kelembapan"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:fontFamily="@font/regular_product"
+                    android:text="Kelembapan Udara"
+                    android:textColor="#2d2d2d"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView22"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView22"
+                    app:layout_constraintTop_toTopOf="@+id/imageView22" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#F6F6F6"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/suhu2"
+            app:layout_constraintStart_toStartOf="@+id/suhu2"
+            app:layout_constraintTop_toBottomOf="@+id/suhu2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Kelembaban udara berpengaruh terhadap evapotranspirasi yaitu tenaga penghisap
+untuk mengangkat air dan hara (nutrisi) dari akar ke tajuk tanaman kentang, kelembaban udara yang baik untuk
+tanaman kentang yaitu 80% sampai 90% ."
+                android:textColor="@color/hijau_font"
+                android:textSize="@dimen/_10sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/suhu3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:layout_marginStart="50dp"
+            app:cardBackgroundColor="#F2F2F2"
+            app:cardCornerRadius="@dimen/_14sdp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/suhuu3"
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView222"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:src="@drawable/ic_intensitas"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView44"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:text="Intensitas Cahaya"
+                    android:textColor="#2d2d2d"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView222"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView222"
+                    app:layout_constraintTop_toTopOf="@+id/imageView222" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#F6F6F6"
+            android:padding="@dimen/_10sdp"
+
+            app:layout_constraintEnd_toEndOf="@+id/suhu3"
+            app:layout_constraintStart_toStartOf="@+id/suhu3"
+            app:layout_constraintTop_toBottomOf="@+id/suhu3">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/regular_product"
+                android:text="intensitas cahaya, sangat berpengaruh terhadap fotosintesis, intensitas cahaya yang kurang menyebabkan tanaman kentang
+memiliki kondisi organ yang relatif kecil khususnya daun, batang dan umbi. Ukuran intensitas cahaya matahari yang cukup
+pada tanaman kentang yaitu maksimal 32.280 lux"
+                android:textColor="@color/hijau_font"
+                android:textSize="@dimen/_10sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/suhu_tanah"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:layout_marginStart="50dp"
+            app:cardBackgroundColor="#F2F2F2"
+            app:cardCornerRadius="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/suhu_tanah2"
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_suhu_tanah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:src="@drawable/ic_suhu_tanah"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_suhu_tanah"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_suhu_tanah"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:text="Suhu Tanah"
+                    android:textColor="#2d2d2d"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_suhu_tanah"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_suhu_tanah"
+                    app:layout_constraintTop_toTopOf="@+id/img_suhu_tanah" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_suhu_tanah"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#F6F6F6"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/suhu_tanah"
+            app:layout_constraintStart_toStartOf="@+id/suhu_tanah"
+            app:layout_constraintTop_toBottomOf="@+id/suhu_tanah">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/regular_product"
+                android:text="Suhu tanah sangat bervariasi, sejalan dengan perubahan proses pertukaran energi matahari, terutama melalui permukaan tanah.
+Skala Suhu tanah yang baik (optimum) untuk pertumbuhan umbi tanaman kentang adalah 14.9°C sampai 17.7°C."
+                android:textColor="@color/hijau_font"
+                android:textSize="@dimen/_10sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/kelembapan_tanah"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:layout_marginStart="50dp"
+            app:cardBackgroundColor="#F2F2F2"
+            app:cardCornerRadius="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_suhu_tanah">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/kelembapan_tanah2"
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_kelembapan_tanah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:src="@drawable/ic_kelembapan_tanah"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_kelembapan_tanah"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_kelembapan_tanah"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:text="Kelembapan Tanah"
+                    android:textColor="#2d2d2d"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_kelembapan_tanah"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_kelembapan_tanah"
+                    app:layout_constraintTop_toTopOf="@+id/img_kelembapan_tanah" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_kelembapan_tanah"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#F6F6F6"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/kelembapan_tanah"
+            app:layout_constraintStart_toStartOf="@+id/kelembapan_tanah"
+            app:layout_constraintTop_toBottomOf="@+id/kelembapan_tanah"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/regular_product"
+                android:text="Kelembaban tanah sangat mempengaruhi pertumbuhan dan perkembangan tanaman kentang khususnya perkembangan umbi,
+kelembapan tanah yang baik untuk pertumbuhan umbi tanaman kentang yaitu rentang 40% hingga 60% "
+                android:textColor="@color/hijau_font"
+                android:textSize="@dimen/_10sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ph"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:layout_marginStart="50dp"
+            app:cardBackgroundColor="#F2F2F2"
+            app:cardCornerRadius="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_kelembapan_tanah">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ph2"
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_ph"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:src="@drawable/ic_kelembapan_tanah"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_ph"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_ph"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:text="PH"
+                    android:textColor="#2d2d2d"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_ph"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_ph"
+                    app:layout_constraintTop_toTopOf="@+id/img_ph" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_ph"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#F6F6F6"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/ph"
+            app:layout_constraintStart_toStartOf="@+id/ph"
+            app:layout_constraintTop_toBottomOf="@+id/ph"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/regular_product"
+                android:text="Kualitas tanah juga dipengaruhi oleh pH tanah, pH tanah yang optimal pada tanaman kentang yaitu kisaran 5-6,5, pH yang
+tidak sesuai dapat mengakibatkan pengikatan unsur-unsur kebutuhan tanaman kentang menjadi tidak dapat diserap secara optimal."
+                android:textColor="@color/hijau_font"
+                android:textSize="@dimen/_10sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
