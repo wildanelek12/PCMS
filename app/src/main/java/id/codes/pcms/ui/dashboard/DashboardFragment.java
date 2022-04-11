@@ -29,10 +29,26 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), SensorNode1Activity.class);
+                intent.putExtra("sensor","SensorNode1");
                 startActivity(intent);
             }
         });
-
+        btnSensor2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SensorNode1Activity.class);
+                intent.putExtra("sensor","SensorNode2");
+                startActivity(intent);
+            }
+        });
+        btnSensor3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), SensorNode1Activity.class);
+                intent.putExtra("sensor","SensorNode3");
+                startActivity(intent);
+            }
+        });
         return root;
     }
 

@@ -58,12 +58,9 @@ public class DetailGrafikActivity extends AppCompatActivity {
 
         cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
 
-        cartesian.title("Humanity sensor ");
+        cartesian.title(getIntent().getStringExtra("nama"));
 
-        cartesian.yAxis(0).title("Suhu");
-        cartesian.xAxis(0).labels().padding(5d, 5d, 5d, 5d);
-
-        FirebaseDatabase.getInstance().getReference("SensorNode1").child("airHum").limitToLast(5).orderByChild("waktu").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference(SensorNode1Activity.sensor).child(getIntent().getStringExtra("child")).limitToLast(5).orderByChild("waktu").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 seriesData.clear();
@@ -96,11 +93,6 @@ public class DetailGrafikActivity extends AppCompatActivity {
                             .anchor(Anchor.LEFT_CENTER)
                             .offsetX(5d)
                             .offsetY(5d);
-
-                    cartesian.legend().enabled(true);
-                    cartesian.legend().fontSize(13d);
-                    cartesian.legend().padding(0d, 0d, 10d, 0d);
-
                     set.data(seriesData);
 
 
