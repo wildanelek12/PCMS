@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -22,8 +23,16 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,MainMenuActivity.class));
-                finish();
+                if(etUsername.getText().toString().equals("")||etPassword.getText().toString().equals("")){
+                    etUsername.setError("Isi Terlebih Dahulu");
+                    etPassword.setError("Isi Terlebih Dahulu");
+                }else if (etUsername.getText().toString().equals("admin")&&etPassword.getText().toString().equals("pcms")){
+                    startActivity(new Intent(LoginActivity.this,MainMenuActivity.class));
+                    finish();
+                }else{
+                    Toast.makeText(LoginActivity.this, "Password salah", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

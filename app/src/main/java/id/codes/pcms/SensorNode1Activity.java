@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +14,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import id.codes.pcms.Model.DataRealtime;
-import id.codes.pcms.Model.DataSuhu;
 
 public class SensorNode1Activity extends AppCompatActivity {
 
@@ -35,6 +31,7 @@ public class SensorNode1Activity extends AppCompatActivity {
     private TextView tvPh;
     static String sensor;
     DatabaseReference databaseReference;
+    private TextView tvNamaSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,65 +39,66 @@ public class SensorNode1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_sensor_node1);
         initView();
         sensor = getIntent().getStringExtra("sensor");
+        tvNamaSensor.setText(getIntent().getStringExtra("nama"));
         databaseReference = FirebaseDatabase.getInstance().getReference(sensor);
-        getSuhu("airHum",tvKelembapanUdara);
-        getSuhu("airTemp",tvSuhu);
-        getSuhu("lux",tvIntensitasCahaya);
-        getSuhu("pH",tvPh);
-        getSuhu("soilHum",tvKelembapanTanah);
-        getSuhu("soilTemp",tvSuhuTanah);
+        getSuhu("airHum", tvKelembapanUdara);
+        getSuhu("airTemp", tvSuhu);
+        getSuhu("lux", tvIntensitasCahaya);
+        getSuhu("pH", tvPh);
+        getSuhu("soilHum", tvKelembapanTanah);
+        getSuhu("soilTemp", tvSuhuTanah);
 
         suhu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SensorNode1Activity.this,DetailGrafikActivity.class);
-                intent.putExtra("child","airTempChart");
-                intent.putExtra("nama","Suhu Udara");
+                Intent intent = new Intent(SensorNode1Activity.this, DetailGrafikActivity.class);
+                intent.putExtra("child", "airTempChart");
+                intent.putExtra("nama", "Suhu Udara");
                 startActivity(intent);
             }
         });
         kelembapanUdara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SensorNode1Activity.this,DetailGrafikActivity.class);
-                intent.putExtra("child","airHumChart");
-                intent.putExtra("nama","Kelembapan Udara");
+                Intent intent = new Intent(SensorNode1Activity.this, DetailGrafikActivity.class);
+                intent.putExtra("child", "airHumChart");
+                intent.putExtra("nama", "Kelembapan Udara");
                 startActivity(intent);
             }
         });
         intensitasCahaya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SensorNode1Activity.this,DetailGrafikActivity.class);
-                intent.putExtra("child","luxChart");
-                intent.putExtra("nama","Intensitas Cahaya");
+                Intent intent = new Intent(SensorNode1Activity.this, DetailGrafikActivity.class);
+                intent.putExtra("child", "luxChart");
+                intent.putExtra("nama", "Intensitas Cahaya");
                 startActivity(intent);
             }
         });
         suhuTanah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SensorNode1Activity.this,DetailGrafikActivity.class);
-                intent.putExtra("child","soilTempChart");
-                intent.putExtra("nama","Suhu Tanah");
+                Intent intent = new Intent(SensorNode1Activity.this, DetailGrafikActivity.class);
+                intent.putExtra("child", "soilTempChart");
+                intent.putExtra("nama", "Suhu Tanah");
                 startActivity(intent);
             }
         });
         kelembapanTanah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SensorNode1Activity.this,DetailGrafikActivity.class);
-                intent.putExtra("child","soilHumChart");
-                intent.putExtra("nama","Kelembapan Tanah");
+                Intent intent = new Intent(SensorNode1Activity.this, DetailGrafikActivity.class);
+                intent.putExtra("child", "soilHumChart");
+                intent.putExtra("nama", "Kelembapan Tanah");
                 startActivity(intent);
             }
         });
         ph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SensorNode1Activity.this,DetailGrafikActivity.class);
-                intent.putExtra("child","phChart");
-                intent.putExtra("child","pH Tanah");
+                Intent intent = new Intent(SensorNode1Activity.this, DetailGrafikActivity.class);
+                intent.putExtra("child", "phChart");
+                intent.putExtra("child", "pH Tanah");
                 startActivity(intent);
             }
         });
@@ -120,9 +118,10 @@ public class SensorNode1Activity extends AppCompatActivity {
         tvKelembapanTanah = (TextView) findViewById(R.id.tv_kelembapan_tanah);
         ph = (CardView) findViewById(R.id.ph);
         tvPh = (TextView) findViewById(R.id.tv_ph);
+        tvNamaSensor = (TextView) findViewById(R.id.tv_nama_sensor);
     }
 
-    void getSuhu(String child,TextView textView){
+    void getSuhu(String child, TextView textView) {
         databaseReference.child(child).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

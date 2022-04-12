@@ -30,6 +30,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), SensorNode1Activity.class);
                 intent.putExtra("sensor","SensorNode1");
+                intent.putExtra("nama","Sensor Node 1");
                 startActivity(intent);
             }
         });
@@ -38,6 +39,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), SensorNode1Activity.class);
                 intent.putExtra("sensor","SensorNode2");
+                intent.putExtra("nama","Sensor Node 2");
                 startActivity(intent);
             }
         });
@@ -46,6 +48,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), SensorNode1Activity.class);
                 intent.putExtra("sensor","SensorNode3");
+                intent.putExtra("nama","Sensor Node 3");
                 startActivity(intent);
             }
         });
