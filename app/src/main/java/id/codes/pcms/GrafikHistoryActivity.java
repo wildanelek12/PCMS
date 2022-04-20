@@ -28,21 +28,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import id.codes.pcms.Model.DataHistory;
 import id.codes.pcms.Model.DataSuhu;
 
-public class DetailGrafikActivity extends AppCompatActivity {
+public class GrafikHistoryActivity extends AppCompatActivity {
 
     private AnyChartView anyChartView;
     List<DataEntry> seriesData = new ArrayList<>();
     Set set;
-    Mapping series1Mapping;
-    Line series1;
+    Mapping series1Mapping,series2Mapping,series3Mapping;
+    Line series1,series2,series3;
     Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_grafik);
+        setContentView(R.layout.activity_grafik_history);
         initView();
         Cartesian cartesian = AnyChart.line();
 
@@ -60,43 +61,50 @@ public class DetailGrafikActivity extends AppCompatActivity {
 
         cartesian.title(getIntent().getStringExtra("nama"));
 
-        FirebaseDatabase.getInstance().getReference(SensorNode1Activity.sensor).child(getIntent().getStringExtra("child")).limitToLast(5).orderByChild("waktu").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("History").child(getIntent().getStringExtra("child")).limitToLast(10).orderByChild("waktu").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 seriesData.clear();
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        DataSuhu dataSuhu = snapshot.getValue(DataSuhu.class);
+                        DataHistory dataHistory = snapshot.getValue(DataHistory.class);
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                        SimpleDateFormat output = new SimpleDateFormat("HH:mm");
+                        SimpleDateFormat output = new SimpleDateFormat("HH:mm:ss");
                         Date d = null;
                         try {
-                            d = sdf.parse(dataSuhu.getwaktu());
+                            d = sdf.parse(dataHistory.getWaktu());
                             String formattedTime = output.format(d);
-                            seriesData.add(new CustomDataEntry(formattedTime, dataSuhu.getvalue()));
+                            seriesData.add(new CustomDataEntry(formattedTime,dataHistory.getSensor_node1(),dataHistory.getSensor_node2(),dataHistory.getSensor_node3()));
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
 
                     }
                     set = Set.instantiate();
-                    set.data(seriesData);
                     series1Mapping = set.mapAs("{ x: 'x', value: 'value' }");
+                        series2Mapping = set.mapAs("{ x: 'x', value: 'value2' }");
+                        series3Mapping = set.mapAs("{ x: 'x', value: 'value3' }");
                     series1 = cartesian.line(series1Mapping);
-                    series1.name("Suhu");
+                        series2 = cartesian.line(series2Mapping);
+                        series3 = cartesian.line(series3Mapping);
+                    series1.name("Node 1");
                     series1.hovered().markers().enabled(true);
                     series1.hovered().markers()
                             .type(MarkerType.CIRCLE)
                             .size(4d);
-                    series1.tooltip()
-                            .position("right")
-                            .anchor(Anchor.LEFT_CENTER)
-                            .offsetX(5d)
-                            .offsetY(5d);
+                    series2.name("Node 2");
+                    series2.hovered().markers().enabled(true);
+                    series2.hovered().markers()
+                            .type(MarkerType.CIRCLE)
+                            .size(4d);
+                    series3.name("Node 3");
+                    series3.hovered().markers().enabled(true);
+                    series3.hovered().markers()
+                            .type(MarkerType.CIRCLE)
+                            .size(4d);
+
+
                     set.data(seriesData);
-
-
-
                 }
             }
 
@@ -107,16 +115,24 @@ public class DetailGrafikActivity extends AppCompatActivity {
         });
 
         anyChartView.setChart(cartesian);
-
     }
 
     private class CustomDataEntry extends ValueDataEntry {
 
-        CustomDataEntry(String x, Number value) {
+        CustomDataEntry(String x, Number value,Number value2,Number value3) {
             super(x, value);
+            setValue("value2", value2);
+            setValue("value3", value3);
         }
 
     }
+//    private class CustomDataEntry extends ValueDataEntry {
+//
+//        CustomDataEntry(String x, Number value) {
+//            super(x, value);
+//        }
+//
+//    }
 
 
     private void initView() {

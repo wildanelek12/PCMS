@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
+import id.codes.pcms.HistoryActivity;
 import id.codes.pcms.R;
 import id.codes.pcms.SensorNode1Activity;
 import id.codes.pcms.databinding.FragmentDashboardBinding;
@@ -20,6 +22,7 @@ public class DashboardFragment extends Fragment {
     private ImageView btnSensor1;
     private ImageView btnSensor2;
     private ImageView btnSensor3;
+    private AppCompatButton btn_history;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -52,6 +55,13 @@ public class DashboardFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        btn_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), HistoryActivity.class);
+                startActivity(intent);
+            }
+        });
         return root;
     }
 
@@ -59,5 +69,7 @@ public class DashboardFragment extends Fragment {
         btnSensor1 = (ImageView) view.findViewById(R.id.btn_sensor_1);
         btnSensor2 = (ImageView) view.findViewById(R.id.btn_sensor_2);
         btnSensor3 = (ImageView) view.findViewById(R.id.btn_sensor_3);
+        btnSensor3 = (ImageView) view.findViewById(R.id.btn_sensor_3);
+        btn_history = (AppCompatButton) view.findViewById(R.id.btn_history);
     }
 }
