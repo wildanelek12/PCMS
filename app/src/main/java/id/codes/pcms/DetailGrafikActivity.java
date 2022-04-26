@@ -83,7 +83,7 @@ public class DetailGrafikActivity extends AppCompatActivity {
                     set.data(seriesData);
                     series1Mapping = set.mapAs("{ x: 'x', value: 'value' }");
                     series1 = cartesian.line(series1Mapping);
-                    series1.name("Suhu");
+                    series1.name(getIntent().getStringExtra("nama"));
                     series1.hovered().markers().enabled(true);
                     series1.hovered().markers()
                             .type(MarkerType.CIRCLE)

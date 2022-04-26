@@ -98,7 +98,7 @@ public class SensorNode1Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SensorNode1Activity.this, DetailGrafikActivity.class);
                 intent.putExtra("child", "phChart");
-                intent.putExtra("child", "pH Tanah");
+                intent.putExtra("nama", "pH Tanah");
                 startActivity(intent);
             }
         });

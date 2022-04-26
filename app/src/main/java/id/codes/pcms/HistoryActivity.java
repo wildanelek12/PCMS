@@ -71,7 +71,7 @@ public class HistoryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(HistoryActivity.this, GrafikHistoryActivity.class);
                 intent.putExtra("child", "ph");
-                intent.putExtra("child", "pH Tanah");
+                intent.putExtra("nama", "pH Tanah");
                 startActivity(intent);
             }
         });
